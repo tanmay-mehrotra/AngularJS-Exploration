@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example39-production</title>
+  
+
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+  <script type="text/javascript">
+   $(document).ready(function(){
+       $('#button').on('click',function(){
+        $('h4').text($('#input').val());
+     });
+   });
+  </script>
+</head>
+<body>
+    <div>
+    Your name:
+      <input id="input" type="text">
+      <button id="button">greet</button>
+      <h4></h4>
+  </div>
+</body>
+</html>

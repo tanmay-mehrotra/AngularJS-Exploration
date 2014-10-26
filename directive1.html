@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example39-production</title>
+  
+
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script src="directive1.js"></script>
+  
+
+  
+</head>
+<body ng-app="directives1">
+    <div ng-controller="directive1Controller">
+      <div ng-repeat="person in persons">
+          <friends frnd="person"></friends>
+          <friends frnd="person"></friends>
+      </div>
+    </div>
+</body>
+</html>

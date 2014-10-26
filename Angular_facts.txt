@@ -1,0 +1,49 @@
+1. scopes bascially acts as a data source for the view and they act in the same hiercahical manner as classes in 'inheritance'
+behave. An application have a sinlge 'rootScope' while each controller can has its won 'scope'.
+2. A controller along with its scope is only loaded in memory when it is called form view.
+3.The important thing here (which is seen as a pain-point by many people) is that EVERY event that enters the angular context will run a $digest loop. That means that every time we write a letter in an input, the loop will run checking every $watch in this page.
+
+4. Isolate scopes : @, = and &
+--------------------------------
+			"@"
+--------------------------------
+This is used to capture "attributes" (one way , from view to model)
+By attribute I mean, suppose you want to pass in a string parameter from view to ur directive then use @
+
+Definitely, this can be done using link function since we can capture attributes in link function and then stick them to our
+isolate scope:
+
+function link (scope, element, attrs){
+	scope.flavour = attrs.flavour;
+}
+
+However we can do this using a short cut, using @ attribute:
+
+ex:
+(view)
+<my-directive flavour="strawberry"></my-directive>
+
+(directive)
+scope :{
+	flavour:'@'
+}
+
+Rem : when using @ we need to pass data using {{}} from the view because we can only pass strings in this case.
+
+
+---------------------------
+			"=" 
+---------------------------
+This is use to do a two way data binding from main controller's scope to directive's isolated scope. Any change in isolate scope is also propogated to parent control scope.
+
+Rem: when using "=" we need to pass in a data property like "person in persons" of the mail controller.
+
+
+---------------------------
+		    "&"
+---------------------------
+This is use to call any function in the contoller scope from within the directive isolated scope.
+When it comes to passing arguments, if arguments are passed from the main controller scope in the view then there is no problem, they are automatically mapped.
+However if arguments are passed from the directive to the main controller then there is a little trick.
+
+
