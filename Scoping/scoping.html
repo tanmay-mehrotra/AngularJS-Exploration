@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example39-production</title>
+  
+
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script src="scopingApp.js"></script>
+  
+</head>
+<body ng-app="scoping">
+    <div ng-controller="OuterController">
+        <p>{{outer_var}}</p>
+        <div ng-controller="MiddleController">
+          <p>{{middle_var}}</p>
+          <p>{{outer_var}}</p>
+        <div>
+  </div>
+</body>
+</html>

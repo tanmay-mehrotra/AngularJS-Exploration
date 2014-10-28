@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script src="transclude.js"></script>
+  
+</head>
+<body ng-app="scoping">
+    <div ng-controller="OuterController">
+        <my-directive>
+          <p>I am a paragraph between my-directive{{ctrl_var}}<p>
+        </my-directive>
+    </div>
+</body>
+</html>

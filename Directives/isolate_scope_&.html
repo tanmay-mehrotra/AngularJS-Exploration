@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Directive &</title>
+  
+
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script src="isolate_scope_&.js"></script>
+  
+  
+</head>
+<body ng-app="isolate_scope">
+    <div ng-controller="isolateScopeController">
+      <b>Ctrl Data</b>
+      <div ng-repeat="person in persons">
+          <p>{{person.name}}</p>
+      </div>
+      <b>Directive Data</b>
+      <div ng-repeat="person in persons">
+          <friends frnd="person.name"></friends>
+      </div>
+      <my-button isolated-function='printScopeToFile(message,user)'></my-button>
+    </div>
+</body>
+</html>

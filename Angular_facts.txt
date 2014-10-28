@@ -3,6 +3,7 @@ behave. An application have a sinlge 'rootScope' while each controller can has i
 2. A controller along with its scope is only loaded in memory when it is called form view.
 3.The important thing here (which is seen as a pain-point by many people) is that EVERY event that enters the angular context will run a $digest loop. That means that every time we write a letter in an input, the loop will run checking every $watch in this page.
 
+---------------------------------------------------------------------------------------------------------------------------
 4. Isolate scopes : @, = and &
 --------------------------------
 			"@"
@@ -45,5 +46,18 @@ Rem: when using "=" we need to pass in a data property like "person in persons" 
 This is use to call any function in the contoller scope from within the directive isolated scope.
 When it comes to passing arguments, if arguments are passed from the main controller scope in the view then there is no problem, they are automatically mapped.
 However if arguments are passed from the directive to the main controller then there is a little trick.
+---------------------------------------------------------------------------------------------------------------------------
+ 
+ - isolated scopes : we need to use either =, @ or & to assign vales to the scope as here we can only add properties passed from view. However, if u want to add arbitary properties to the scope then use link function and add properties over there.  
+ - if isolated scope is defined then link function gets it and if not defined then link function gets ctrl's scope aka parents scope. 
+
+- isolated scope If set to true, then a new scope will be created for this directive. If false, then default behaviour (parent scope is used) and if set to {} an isolated scope is created.
+
+---------------------------
+       transclusion
+---------------------------
+
+
+
 
 

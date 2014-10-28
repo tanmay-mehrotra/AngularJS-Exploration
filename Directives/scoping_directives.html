@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script src="scoping_directives.js"></script>
+  
+</head>
+<body ng-app="scoping">
+    <div ng-controller="OuterController">
+        <p>{{outer_var}}</p>
+        <my-directive></my-directive>
+    </div>
+</body>
+</html>
