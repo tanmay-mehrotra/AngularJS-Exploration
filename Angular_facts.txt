@@ -51,13 +51,18 @@ However if arguments are passed from the directive to the main controller then t
  - isolated scopes : we need to use either =, @ or & to assign vales to the scope as here we can only add properties passed from view. However, if u want to add arbitary properties to the scope then use link function and add properties over there.  
  - if isolated scope is defined then link function gets it and if not defined then link function gets ctrl's scope aka parents scope. 
 
-- isolated scope If set to true, then a new scope will be created for this directive. If false, then default behaviour (parent scope is used) and if set to {} an isolated scope is created.
+- if scope in a directive is set to true, then we inherit parent scope with one way binding only(i.e changes done on directive side's will not affect controller). If false, parent scope is used but a two way binding happens and if set to {} an isolated scope is created.
 
 ---------------------------
        transclusion
 ---------------------------
 
+http://angular-tips.com/blog/2014/03/transclusion-and-scopes/
+
+The misconception here is to think that the transcluded html has access to the isolated scope or that the transcluded html is a new child scope of it (as I showed on the diagram before). The reality is that the transcluded html is a new child scope of the controller’s one
 
 
+https://docs.angularjs.org/api/ng/service/$compile
+Controllers in DI : They are the only way to communicate between DIs.
 
 

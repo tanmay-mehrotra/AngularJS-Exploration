@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>tabs using bootstrap</title>
+  <link rel="stylesheet" href="/Users/tanmaymehrotra/Desktop/MEAN/AngularJS/bootstrap.min.css">
+</head>
+
+<body ng-app="tabApp">
+  <div ng-controller="tabController">
+	<ul class="nav nav-pills">
+        <li ng-click='setTab("home")' ng-class='{active:isSelected("home")}'><a href='#home'>Home</a></li>
+        <li ng-click='setTab("profile")' ng-class='{active:isSelected("profile")}'><a href='#profile'>Profile</a></li>
+        <li ng-click='setTab("message")' ng-class='{active:isSelected("message")}'><a href='#message'>Messages</a></li>
+	</ul>
+
+	<div id="home" class="panel" ng-show='isSelected("home")'>
+		<h4>Home</h4>
+		<p>My home is in kanpur, UP India</p>
+	</div>
+
+	<div id="profile" class="panel" ng-show='isSelected("profile")'>
+		<h4>Profile</h4>
+		<p>I work as a tech dev in BofA</p>
+	</div>
+
+	<div id="message" class="panel" ng-show='isSelected("message")'>
+		<h4>Message</h4>
+		<p>Please leave any message for me here.</p>
+	</div>
+  </div>
+<script type="text/javascript" src="/Users/tanmaymehrotra/Desktop/MEAN/AngularJS/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
